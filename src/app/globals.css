@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+:root {
+  --bj-sky: #bdeff7;
+  --bj-sky-deep: #8fe1ee;
+  --bj-cream: #fff9ec;
+  --bj-navy: #0b2a4a;
+  --bj-navy-soft: #173f63;
+  --bj-coral: #ff7a59;
+  --bj-coral-deep: #e85f3d;
+  --bj-pearl: #3e2723;
+  --bj-gold: #e8b84b;
+
+  --background: var(--bj-cream);
+  --foreground: var(--bj-navy);
+
+  --font-display: "Baloo 2", system-ui, sans-serif;
+  --font-body: "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-bj-sky: var(--bj-sky);
+  --color-bj-sky-deep: var(--bj-sky-deep);
+  --color-bj-cream: var(--bj-cream);
+  --color-bj-navy: var(--bj-navy);
+  --color-bj-navy-soft: var(--bj-navy-soft);
+  --color-bj-coral: var(--bj-coral);
+  --color-bj-coral-deep: var(--bj-coral-deep);
+  --color-bj-pearl: var(--bj-pearl);
+  --color-bj-gold: var(--bj-gold);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background: var(--bj-coral);
+  color: var(--bj-cream);
+}
+
+.bj-outline-text {
+  -webkit-text-stroke: 2px var(--bj-navy);
+  paint-order: stroke fill;
+}
+
+.bj-noise {
+  background-image: radial-gradient(var(--bj-navy-soft) 0.5px, transparent 0.5px);
+  background-size: 14px 14px;
+  opacity: 0.06;
+}
+
+.bj-scrollbar::-webkit-scrollbar {
+  height: 6px;
+}
+.bj-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.bj-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--bj-sky-deep);
+  border-radius: 999px;
+}
